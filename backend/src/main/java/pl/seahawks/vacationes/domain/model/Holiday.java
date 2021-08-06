@@ -31,5 +31,4 @@ public class Holiday {
     private OfferType offerType;
     @Enumerated(EnumType.STRING)
     private OfferPackage offerPackage;
-
 }

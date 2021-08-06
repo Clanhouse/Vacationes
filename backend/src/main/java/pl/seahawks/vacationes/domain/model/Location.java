@@ -40,5 +40,4 @@ public class Location {
     public void removeFlight(Flight flight) {
         flights.remove(flight);
     }
-
 }

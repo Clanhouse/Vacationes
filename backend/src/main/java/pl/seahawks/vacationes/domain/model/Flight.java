@@ -25,5 +25,4 @@ public class Flight {
     private LocalDate departureDate;
     private LocalDate returnDate;
     private String url;
-
 }

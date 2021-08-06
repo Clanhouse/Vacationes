@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 public class UserRole {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,7 +18,5 @@ public class UserRole {
     private Role role;
     @ManyToOne
     private User user;
-
-
 }
 
