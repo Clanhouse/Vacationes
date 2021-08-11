@@ -21,6 +21,8 @@ public class Holiday {
     private Location destination;
     @OneToOne
     private Flight flight;
+    @OneToOne
+    private Hotel hotel;
     private BigDecimal price;
     private Integer duration;
     private LocalDate start;
