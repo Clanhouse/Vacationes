@@ -1,8 +1,7 @@
 package pl.seahawks.vacationes.domain.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -12,6 +11,8 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @Entity
+@AllArgsConstructor
+@Builder
 public class Holiday {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +26,10 @@ public class Holiday {
     private Hotel hotel;
     private BigDecimal price;
     private Integer duration;
-    private LocalDate start;
-    private LocalDate end;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate startDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate endDate;
     private String url;
     private String pictureUrl;
     @Enumerated(EnumType.STRING)
