@@ -63,7 +63,7 @@
             <column name="destination_id" type="bigint">
                 <constraints
                         nullable="false"
-                        foreignKeyName="fk_destination_id__location_id"
+                        foreignKeyName="fk_target_id__location_id"
                         referencedTableName="location"
                         referencedColumnNames="id"
                 />
@@ -77,8 +77,8 @@
             </column>
             <column name="price" type="decimal"/>
             <column name="duration" type="int"/>
-            <column name="start" type="date"/>
-            <column name="end" type="date"/>
+            <column name="start_date" type="date"/>
+            <column name="end_date" type="date"/>
             <column name="url" type="varchar(255)"/>
             <column name="picture_url" type="varchar(255)"/>
             <column name="offer_type" type="varchar(100)"/>
