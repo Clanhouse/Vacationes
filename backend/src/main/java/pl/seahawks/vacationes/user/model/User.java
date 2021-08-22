@@ -22,6 +22,8 @@ public class User {
             cascade = {CascadeType.MERGE, CascadeType.REMOVE, CascadeType.PERSIST, CascadeType.REFRESH},
             orphanRemoval = true)
     private Set<UserRole> userRoles;
+    private boolean mailAuthenticated;
+    private boolean newsletterSigned;
 
     public void addUserRole(UserRole userRole) {
         userRoles.add(userRole);
