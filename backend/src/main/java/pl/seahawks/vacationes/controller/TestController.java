@@ -14,6 +14,7 @@ import pl.seahawks.vacationes.repository.FlightRepository;
 import pl.seahawks.vacationes.repository.HolidayRepository;
 import pl.seahawks.vacationes.repository.HotelRepository;
 import pl.seahawks.vacationes.repository.LocationRepository;
+import pl.seahawks.vacationes.service.ScrapingService;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -28,6 +29,7 @@ public class TestController {
     private final HolidayRepository holidayRepository;
     private final HotelRepository hotelRepository;
     private final LocationRepository locationRepository;
+    private final ScrapingService scrapingService;
 
     @GetMapping("/flights")
     public ResponseEntity<List<Flight>> getFlights() {
@@ -51,5 +53,11 @@ public class TestController {
     public ResponseEntity<List<Location>> getLocations() {
         List<Location> locations = locationRepository.findAll();
         return new ResponseEntity<>(locations, HttpStatus.OK);
+    }
+
+    @GetMapping("/scraping")
+    public ResponseEntity<String> getItaka(){
+        scrapingService.getItakaHomePage();
+        return new ResponseEntity<>("OK", HttpStatus.OK);
     }
 }
