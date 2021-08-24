@@ -18,7 +18,7 @@ public class ScrapingServiceImpl implements ScrapingService {
     try {
       itakaProvider.getHomePage();
     } catch (IOException e) {
-      e.printStackTrace();
+      e.printStackTrace(); //TODO Added new class exception
     }
   }
 }
