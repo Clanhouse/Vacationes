@@ -1,5 +1,7 @@
 package pl.seahawks.vacationes.service;
 
+import pl.seahawks.vacationes.dto.OfferRequirementsDto;
+
 public interface ScrapingService {
-    void getItakaHomePage();
+    void getItakaGeneralOffer(OfferRequirementsDto offerRequirementsDto);
 }
