@@ -1,4 +1,4 @@
-package pl.seahawks.vacationes.config.security;
+package pl.seahawks.vacationes.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

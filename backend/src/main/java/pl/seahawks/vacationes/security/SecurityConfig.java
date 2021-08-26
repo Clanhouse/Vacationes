@@ -1,23 +1,26 @@
-package pl.seahawks.vacationes.config.security;
+package pl.seahawks.vacationes.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
+import pl.seahawks.vacationes.repository.UserRepository;
 
 import javax.sql.DataSource;
 
 @Configuration
-
+@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final DataSource dataSource;
@@ -25,28 +28,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final RestAuthenticationSuccessHandler authenticationSuccessHandler;
     private final RestAuthenticationFailureHandler authenticationFailureHandler;
     private final String secret;
+    private final UserRepository repository;
 
 
     public SecurityConfig(DataSource dataSource,
                           ObjectMapper objectMapper,
                           RestAuthenticationSuccessHandler authenticationSuccessHandler,
                           RestAuthenticationFailureHandler authenticationFailureHandler,
-                          @Value("${jwt.secret}") String secret) {
+                          @Value("${jwt.secret}") String secret,
+                          UserRepository repository) {
 
         this.dataSource = dataSource;
         this.objectMapper = objectMapper;
         this.authenticationSuccessHandler = authenticationSuccessHandler;
         this.authenticationFailureHandler = authenticationFailureHandler;
         this.secret = secret;
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication()
-                .dataSource(dataSource)
-                .withUser("test")
-                .password("{bcrypt}"+ new BCryptPasswordEncoder().encode("test"))
-                .roles("USER");
+        this.repository = repository;
     }
 
     @Override
@@ -69,6 +66,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED));
 
     }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(authenticationProvider());
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        SeahawksUserDetailsService detailsService = new SeahawksUserDetailsService(repository);
+        provider.setUserDetailsService(detailsService);
+        return provider;
+    }
+
 
     @Bean
     public JsonObjectAuthenticationFilter authenticationFilter() throws Exception{

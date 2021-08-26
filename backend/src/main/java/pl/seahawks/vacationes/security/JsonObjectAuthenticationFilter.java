@@ -1,4 +1,4 @@
-package pl.seahawks.vacationes.config.security;
+package pl.seahawks.vacationes.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
