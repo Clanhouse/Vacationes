@@ -54,10 +54,4 @@ public class TestController {
         List<Location> locations = locationRepository.findAll();
         return new ResponseEntity<>(locations, HttpStatus.OK);
     }
-
-    @GetMapping("/scraping")
-    public ResponseEntity<String> getItaka(){
-        scrapingService.getItakaHomePage();
-        return new ResponseEntity<>("OK", HttpStatus.OK);
-    }
 }

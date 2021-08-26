@@ -18,7 +18,7 @@ public class ScrapingController {
 
   @GetMapping(value = "/oferts")
   public ResponseEntity<OfferRequirementsDto> getOferts(OfferRequirementsDto offerRequirementsDto) {
-    scrapingService.getItakaGeneralOffer(offerRequirementsDto);
+    scrapingService.getItakaOffersByRequirements(offerRequirementsDto);
     return new ResponseEntity<>(offerRequirementsDto, HttpStatus.OK);
   }
 }

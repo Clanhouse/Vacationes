@@ -1,9 +1,10 @@
 package pl.seahawks.vacationes.dto;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import net.bytebuddy.implementation.bind.annotation.Empty;
+
 import org.springframework.lang.Nullable;
 
 @Data
@@ -13,12 +14,16 @@ public class OfferRequirementsDto {
 
   @Nullable
   private String packageType;
-  @Nullable
+  @NotNull
   private String adults;
   @Nullable
   private String childrenAge;
-  @Nullable
+  @NotNull
   private String dateFrom;
+  @NotNull
+  private String dateTo;
   @Nullable
   private String food;
+  @NotNull
+  private String region;
 }
