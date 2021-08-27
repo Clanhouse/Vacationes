@@ -13,9 +13,10 @@ public class ItakaGeneralOfferDto {
 
   private String nameHotel;
   private String linkToMainOferr;
-  private String kindOfOferr;
+  private String kindOfOffer;
   private String price;
   private String duration;
-  private String ratng;
+  private String rating;
   private String linkToPhoto;
+  private Boolean isBestseller;
 }
