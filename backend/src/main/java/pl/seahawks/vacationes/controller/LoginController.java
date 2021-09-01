@@ -9,7 +9,6 @@ import pl.seahawks.vacationes.user.model.User;
 public class LoginController {
 
     @PostMapping("/login")
-    public void login(@RequestBody User credentials){
-
+    public void login(@RequestBody User credentials) {
     }
 }
