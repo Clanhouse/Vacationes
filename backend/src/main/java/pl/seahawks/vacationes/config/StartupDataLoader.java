@@ -8,12 +8,15 @@ import org.springframework.stereotype.Component;
 import pl.seahawks.vacationes.domain.model.*;
 import pl.seahawks.vacationes.repository.*;
 import pl.seahawks.vacationes.user.model.Role;
+import pl.seahawks.vacationes.user.model.User;
 import pl.seahawks.vacationes.user.model.UserRole;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.Optional;
+import java.util.Set;
 
 @Component
 @AllArgsConstructor
@@ -24,6 +27,7 @@ public class StartupDataLoader {
     private final HotelRepository hotelRepository;
     private final LocationRepository locationRepository;
     private final RoleRepository roleRepository;
+    private final UserRepository userRepository;
 
     @EventListener
     @Profile("dev")
@@ -111,5 +115,14 @@ public class StartupDataLoader {
         roleRepository.save(roleUser);
         roleRepository.save(roleAdmin);
         roleRepository.save(roleModerator);
+
+//        User user = new User();
+//        user.setEmail("test");
+//        user.setPassword("qwerty");
+//        user.setUserRoles(Set.of(new UserRole(Role.ROLE_USER, user)));
+//        userRepository.save(user);
+
+//        Optional<User> test = userRepository.findByEmail("test");
+//        System.out.println(test.get().getEmail());
     }
 }

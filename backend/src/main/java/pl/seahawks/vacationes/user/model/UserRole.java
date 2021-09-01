@@ -1,5 +1,6 @@
 package pl.seahawks.vacationes.user.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,5 +19,10 @@ public class UserRole {
     private Role role;
     @ManyToOne
     private User user;
+
+    public UserRole(Role role, User user) {
+        this.role = role;
+        this.user = user;
+    }
 }
 
