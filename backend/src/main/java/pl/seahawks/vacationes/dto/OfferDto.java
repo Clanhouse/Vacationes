@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ItakaGeneralOfferDto {
+public class OfferDto {
 
   private String nameHotel;
   private String linkToMainOferr;

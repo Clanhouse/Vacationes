@@ -1,7 +1,10 @@
 package pl.seahawks.vacationes.service;
 
+import pl.seahawks.vacationes.dto.OfferDto;
 import pl.seahawks.vacationes.dto.OfferRequirementsDto;
 
+import java.util.List;
+
 public interface ScrapingService {
-    void getItakaOffersByRequirements(OfferRequirementsDto offerRequirementsDto);
+    List<OfferDto> getItakaOffersByRequirements(OfferRequirementsDto offerRequirementsDto);
 }

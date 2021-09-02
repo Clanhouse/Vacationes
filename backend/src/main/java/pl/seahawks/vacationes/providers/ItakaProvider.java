@@ -5,7 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.context.annotation.Configuration;
-import pl.seahawks.vacationes.dto.ItakaGeneralOfferDto;
+import pl.seahawks.vacationes.dto.OfferDto;
 import pl.seahawks.vacationes.dto.OfferRequirementsDto;
 
 import java.io.IOException;
@@ -13,14 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-public class ItakaProvider {
+public class ItakaProvider implements Provider {
 
   private final String BASE_URL_ITAKA = "https://www.itaka.pl";
   private final String BASE_SEARCH_URL_WITH_PARAMS =
       "https://www.itaka.pl/wyniki-wyszukiwania/wakacje/?date-from=%s&date-to=%s&adults=%s&dest-region=%s";
 
-  public List<ItakaGeneralOfferDto> getGeneralOffersByRequirements(
-      OfferRequirementsDto offerRequirementsDto) throws IOException {
+  @Override
+  public List<OfferDto> getOfferList(OfferRequirementsDto offerRequirementsDto) throws IOException {
     String url =
         String.format(
             BASE_SEARCH_URL_WITH_PARAMS,
@@ -30,13 +30,14 @@ public class ItakaProvider {
             offerRequirementsDto.getRegion());
     Document webWithGeneralOffers = Jsoup.connect(url).get();
     Elements articles = webWithGeneralOffers.getElementsByTag("article");
-    List<ItakaGeneralOfferDto> listItakaGeneralOferr = new ArrayList<>();
+    List<OfferDto> listItakaGeneralOferr = new ArrayList<>();
     articles.forEach(article -> listItakaGeneralOferr.add(getDetalistOffer(article)));
-    return new ArrayList<>();
+    return listItakaGeneralOferr;
   }
 
-  private ItakaGeneralOfferDto getDetalistOffer(Element article) {
-    return ItakaGeneralOfferDto.builder()
+  @Override
+  public OfferDto getDetalistOffer(Element article) {
+    return OfferDto.builder()
         .nameHotel(article.getElementsByClass("header_title").select("a").text())
         .linkToMainOferr(
             BASE_URL_ITAKA
