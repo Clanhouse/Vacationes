@@ -1,14 +1,14 @@
 package pl.seahawks.vacationes.config;
 
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import pl.seahawks.vacationes.domain.model.*;
-import pl.seahawks.vacationes.repository.FlightRepository;
-import pl.seahawks.vacationes.repository.HolidayRepository;
-import pl.seahawks.vacationes.repository.HotelRepository;
-import pl.seahawks.vacationes.repository.LocationRepository;
+import pl.seahawks.vacationes.repository.*;
+import pl.seahawks.vacationes.user.model.Role;
+import pl.seahawks.vacationes.user.model.UserRole;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -16,6 +16,7 @@ import java.time.Month;
 import java.util.ArrayList;
 
 @Component
+@Profile("dev")
 @AllArgsConstructor
 public class StartupDataLoader {
 
@@ -23,6 +24,7 @@ public class StartupDataLoader {
     private final HolidayRepository holidayRepository;
     private final HotelRepository hotelRepository;
     private final LocationRepository locationRepository;
+    private final RoleRepository roleRepository;
 
     @EventListener
     public void loadData(ContextRefreshedEvent event) {
@@ -99,5 +101,15 @@ public class StartupDataLoader {
                 .hotel(hotel)
                 .build();
         holidayRepository.save(holiday);
+
+        UserRole roleUser = new UserRole();
+        roleUser.setRole(Role.ROLE_USER);
+        UserRole roleAdmin = new UserRole();
+        roleAdmin.setRole(Role.ROLE_ADMIN);
+        UserRole roleModerator = new UserRole();
+        roleModerator.setRole(Role.ROLE_MODERATOR);
+        roleRepository.save(roleUser);
+        roleRepository.save(roleAdmin);
+        roleRepository.save(roleModerator);
     }
 }

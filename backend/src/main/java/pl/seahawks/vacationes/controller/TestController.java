@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.seahawks.vacationes.domain.model.Flight;
 import pl.seahawks.vacationes.domain.model.Holiday;
@@ -19,6 +20,7 @@ import pl.seahawks.vacationes.service.ScrapingService;
 import javax.transaction.Transactional;
 import java.util.List;
 
+@RequestMapping("/api")
 @RestController
 @AllArgsConstructor
 @Transactional
