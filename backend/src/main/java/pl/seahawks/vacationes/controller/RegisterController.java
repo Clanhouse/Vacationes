@@ -15,7 +15,7 @@ import pl.seahawks.vacationes.service.RegistrationService;
 
 @Controller
 @RestController
-@RequestMapping("/register")
+@RequestMapping("/api/register")
 @Slf4j
 @RequiredArgsConstructor
 public class RegisterController {

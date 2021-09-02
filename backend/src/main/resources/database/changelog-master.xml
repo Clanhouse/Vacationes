@@ -9,4 +9,5 @@
     <include file="0001-init.xml" relativeToChangelogFile="true"/>
     <include file="0002-user_user_roles.xml" relativeToChangelogFile="true"/>
     <include file="0003-user_mailAuthenticated_newsletterSigned.xml" relativeToChangelogFile="true"/>
+    <include file="0004-table_user_rename_to_users.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

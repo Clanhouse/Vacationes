@@ -56,9 +56,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/swagger-ui.html").permitAll()
                 .antMatchers("/v2/api-docs").permitAll()
                 .antMatchers("/swagger-resources/**").permitAll()
-                .antMatchers("/h2.console/**").permitAll()
-                .antMatchers("/flights").permitAll()
-                .antMatchers("/register/**").permitAll()
+                .antMatchers("/h2-console/**").permitAll()
+                .antMatchers("/api/flights").permitAll()
+                .antMatchers("/api/holidays").permitAll()
+                .antMatchers("/api/hotels").permitAll()
+                .antMatchers("/api/locations").permitAll()
+                .antMatchers("/api/register/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -89,7 +92,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Bean
-    public JsonObjectAuthenticationFilter authenticationFilter() throws Exception{
+    public JsonObjectAuthenticationFilter authenticationFilter() throws Exception {
         JsonObjectAuthenticationFilter filter = new JsonObjectAuthenticationFilter(objectMapper);
         filter.setAuthenticationSuccessHandler(authenticationSuccessHandler);
         filter.setAuthenticationFailureHandler(authenticationFailureHandler);
@@ -98,7 +101,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public UserDetailsManager userDetailsManager(){
+    public UserDetailsManager userDetailsManager() {
         return new JdbcUserDetailsManager(dataSource);
     }
 }

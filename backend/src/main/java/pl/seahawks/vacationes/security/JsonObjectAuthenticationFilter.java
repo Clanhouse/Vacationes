@@ -36,6 +36,4 @@ public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticati
             throw new IllegalArgumentException(e.getMessage());
         }
     }
-
-
 }
