@@ -16,6 +16,7 @@ import java.time.Month;
 import java.util.ArrayList;
 
 @Component
+@Profile("dev")
 @AllArgsConstructor
 public class StartupDataLoader {
 
@@ -26,7 +27,6 @@ public class StartupDataLoader {
     private final RoleRepository roleRepository;
 
     @EventListener
-    @Profile("dev")
     public void loadData(ContextRefreshedEvent event) {
         //example date
         LocalDate date1 = LocalDate.of(2021, Month.NOVEMBER, 20);
