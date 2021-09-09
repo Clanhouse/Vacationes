@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 1291px;
+  height: 48px;
+  left: 81px;
+  top: 26px;
+  .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 1101.05px;
+    height: 48px;
+    left: 189.95px;
+  }
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .bell-icon {
+    position: static;
+    width: 21.52px;
+    height: 24px;
+    left: 940.11px;
+    top: 12px;
+  }
+  .heart-icon {
+    position: static;
+    left: 90.24%;
+    right: 7.27%;
+    top: 25%;
+    bottom: 25%;
+    margin: 0 32px;
+  }
+  .user-btn {
+    background-color: #ff944d;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
