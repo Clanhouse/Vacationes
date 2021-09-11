@@ -1,9 +1,9 @@
 import React from 'react';
 import './index.scss';
-import logo from 'assets/images/Navbar images/Logo.png';
-import rectangle from 'assets/images/Navbar images/Rectangle.png';
-import union from 'assets/images/Navbar images/Heart.png';
-import user from 'assets/images/Navbar images/User.svg';
+import logo from 'assets/images/navbar/logo-icon.svg';
+import bell from 'assets/images/navbar/bell-icon.svg';
+import heart from 'assets/images/navbar/heart-icon.svg';
+import user from 'assets/images/navbar/user-icon.svg';
 
 const Navbar = () => {
   return (
@@ -13,10 +13,10 @@ const Navbar = () => {
       </div>
       <div className="options">
         <button>
-          <img src={rectangle} alt="bell icon" className="bell-icon" />
+          <img src={bell} alt="bell icon" className="bell-icon" />
         </button>
         <button>
-          <img src={union} alt="heart icon" className="heart-icon" />
+          <img src={heart} alt="heart icon" className="heart-icon" />
         </button>
         <button className="user-btn">
           <img src={user} alt="user icon" className="user-icon" />
