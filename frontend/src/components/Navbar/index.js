@@ -6,7 +6,7 @@ import user from 'assets/images/navbar/user-icon.svg';
 
 const Navbar = () => {
   return (
-    <div className={styles.wrapper}>
+    <nav className={styles.wrapper}>
       <div>
         <img src={logo} alt="logo" />
       </div>
@@ -21,7 +21,7 @@ const Navbar = () => {
           <img src={user} alt="user icon" />
         </button>
       </div>
-    </div>
+    </nav>
   );
 };
 
