@@ -1,16 +1,16 @@
-.navbar {
+.wrapper {
+  box-sizing: border-box;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 1600px;
-  margin: 0 72px;
   position: absolute;
-  top: 16px;
+  top: 0;
   left: 0;
   right: 0;
+  margin: 32px 72px;
   .options {
     display: flex;
-    flex-direction: row;
   }
   button {
     border: none;
@@ -18,16 +18,10 @@
     background-color: transparent;
     cursor: pointer;
   }
-  .bell-icon {
-    width: 21.52px;
-    height: 24px;
-  }
-  .heart-icon {
-    top: 25%;
-    bottom: 25%;
+  .heartBtn {
     margin: 0 32px;
   }
-  .user-btn {
+  .userBtn {
     background-color: #ff944d;
     width: 48px;
     height: 48px;
