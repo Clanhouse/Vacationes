@@ -1,21 +1,16 @@
 .navbar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  max-width: 1600px;
+  margin: 0 72px;
   position: absolute;
-  width: 1291px;
-  height: 48px;
-  left: 81px;
-  top: 26px;
+  top: 16px;
+  left: 0;
+  right: 0;
   .options {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    width: 1101.05px;
-    height: 48px;
-    left: 189.95px;
   }
   button {
     border: none;
@@ -24,16 +19,10 @@
     cursor: pointer;
   }
   .bell-icon {
-    position: static;
     width: 21.52px;
     height: 24px;
-    left: 940.11px;
-    top: 12px;
   }
   .heart-icon {
-    position: static;
-    left: 90.24%;
-    right: 7.27%;
     top: 25%;
     bottom: 25%;
     margin: 0 32px;

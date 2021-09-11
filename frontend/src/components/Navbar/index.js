@@ -1,9 +1,9 @@
 import React from 'react';
 import './index.scss';
-import logo from '../../assets/images/Navbar images/Group 289.png';
-import rectangle from '../../assets/images/Navbar images/Rectangle 28.png';
-import union from '../../assets/images/Navbar images/Union.png';
-import user from '../../assets/images/Navbar images/Group 218.svg';
+import logo from 'assets/images/Navbar images/Logo.png';
+import rectangle from 'assets/images/Navbar images/Rectangle.png';
+import union from 'assets/images/Navbar images/Heart.png';
+import user from 'assets/images/Navbar images/User.svg';
 
 const Navbar = () => {
   return (
