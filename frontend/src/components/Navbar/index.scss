@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 72px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  .options {
+    display: flex;
+    flex-direction: row;
+  }
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .bell-icon {
+    width: 21.52px;
+    height: 24px;
+  }
+  .heart-icon {
+    top: 25%;
+    bottom: 25%;
+    margin: 0 32px;
+  }
+  .user-btn {
+    background-color: #ff944d;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
