@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.seahawks.vacationes.dto.OfferDto;
 import pl.seahawks.vacationes.dto.OfferRequirementsDto;
-import pl.seahawks.vacationes.providers.ItakaProvider;
 import pl.seahawks.vacationes.providers.Provider;
 import pl.seahawks.vacationes.service.ScrapingService;
 
@@ -26,5 +25,10 @@ public class ScrapingServiceImpl implements ScrapingService {
       e.printStackTrace(); //TODO Added new class exception
     }
     return new ArrayList<>();
+  }
+
+  @Override
+  public List<OfferDto> getTheBestOffer () throws IOException {
+    return provider.getTheBestRatingOffer();
   }
 }
