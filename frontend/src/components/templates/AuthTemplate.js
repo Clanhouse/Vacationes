@@ -4,7 +4,9 @@ import styles from './AuthTemplate.module.scss';
 const AuthTemplate = ({ children }) => {
   return (
     <div className={styles.wrapper}>
-      <img className={styles.heroImage} src={hero} alt="hero" />
+      <div className={styles.heroImageWrapper}>
+        <img className={styles.heroImage} src={hero} alt="hero" />
+      </div>
       <div className={styles.formWrapper}>{children}</div>
     </div>
   );
