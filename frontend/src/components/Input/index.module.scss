@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  label {
+    font-size: 14px;
+    color: #2b2b2b;
+  }
+
+  input {
+    width: 416px;
+    height: 56px;
+    font-size: 18px;
+    padding-left: 16px;
+    border: 1px solid #e7e1d6;
+    border-radius: 16px;
+  }
+}
