@@ -62,6 +62,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/hotels").permitAll()
                 .antMatchers("/api/locations").permitAll()
                 .antMatchers("/api/register/**").permitAll()
+                .antMatchers("/scraping/oferts").permitAll()
+                .antMatchers("/api/the-best").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
