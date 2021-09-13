@@ -1,15 +1,17 @@
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import MainTemplate from 'components/templates/MainTemplate';
+import LoginPage from 'views/LoginPage';
+import RegisterPage from 'views/RegisterPage';
 
 const App = () => {
   return (
     <MainTemplate>
       <Router>
         <Route path="/login">
-          <p>login page</p>
+          <LoginPage />
         </Route>
         <Route path="/register">
-          <p>register page</p>
+          <RegisterPage />
         </Route>
         <Route path="/forgot-password">
           <p>forgot-password page</p>
