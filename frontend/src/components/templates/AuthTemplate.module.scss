@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+}
+.heroImage {
+    width: 50%;
+}
+.formWrapper {
+    width: 50%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
