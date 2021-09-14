@@ -1,8 +1,12 @@
 .wrapper {
     display: flex;
+    height: calc(100vh - 112px - 50px);
+    width: calc(100%-100px);
+    margin-top: 112px;
 }
-.heroImage {
+.heroImageWrapper {
     width: 50%;
+    display: flex;
 }
 .formWrapper {
     width: 50%;
