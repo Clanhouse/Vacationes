@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MainTemplate from 'components/templates/MainTemplate';
 import LoginPage from 'views/LoginPage';
 import RegisterPage from 'views/RegisterPage';
+import HomePage from './HomePage';
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
           <p>favorites page</p>
         </Route>
         <Route path="/" exact>
-          <Redirect to="/login" />
+          <HomePage />
         </Route>
       </Router>
     </MainTemplate>
