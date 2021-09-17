@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styles from './index.module.scss';
 import logo from 'assets/images/navbar/logo-icon.svg';
 import bell from 'assets/images/navbar/bell-icon.svg';
@@ -7,18 +8,26 @@ import user from 'assets/images/navbar/user-icon.svg';
 const Navbar = () => {
   return (
     <nav className={styles.wrapper}>
-      <div>
-        <img src={logo} alt="logo" />
-      </div>
+      <button>
+        <NavLink to="/">
+          <img src={logo} alt="logo" />
+        </NavLink>
+      </button>
       <div className={styles.options}>
         <button>
-          <img src={bell} alt="bell icon" className={styles.bellIcon} />
+          <NavLink to="/notifications">
+            <img src={bell} alt="bell icon" className={styles.bellIcon} />
+          </NavLink>
         </button>
         <button className={styles.heartBtn}>
-          <img src={heart} alt="heart icon" />
+          <NavLink to="/favorites">
+            <img src={heart} alt="heart icon" />
+          </NavLink>
         </button>
         <button className={styles.userBtn}>
-          <img src={user} alt="user icon" />
+          <NavLink to="/login">
+            <img src={user} alt="user icon" />
+          </NavLink>
         </button>
       </div>
     </nav>
