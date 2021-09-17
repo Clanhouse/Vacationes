@@ -1,0 +1,108 @@
+.wrapper {
+  height: 412px;
+  width: 1296px auto;
+  background-color: rgba(255, 197, 144, 0.1);
+  border-radius: 20px 20px 0 100px;
+  .header {
+    height: 43px;
+    width: 266px;
+    color: #ff944d;
+    font-size: 32px;
+    letter-spacing: 0.03em;
+    padding-top: 56px;
+    padding-left: 117px;
+  }
+  ul {
+    display: flex;
+    padding: 10px 0 10px 110px;
+    li {
+      height: 96px;
+      width: 182px;
+      border-radius: 20px;
+      background-color: #fffcf7;
+      box-shadow: -1px 2px 5px rgba(227, 174, 138, 0.09),
+        -3px 7px 19px rgba(218, 163, 127, 0.21);
+      list-style: none;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      div {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 168.38px;
+        height: 81.23px;
+        border: 1px solid lightgray;
+        box-sizing: border-box;
+        border-radius: 16px;
+        input {
+          visibility: hidden;
+        }
+        input:checked + label {
+          background: red;
+        }
+      }
+      .places.checked {
+        color: #ff944d;
+        border: 1px solid #ff944d;
+      }
+      .flights.checked {
+        color: #00b9d2;
+        border: 1px solid #00b9d2;
+      }
+    }
+  }
+  .formBar {
+    height: 96px;
+    width: 1076px;
+    margin-left: 110px;
+    background-color: #fffcf7;
+    box-shadow: -1px 2px 5px rgba(227, 174, 138, 0.09),
+      -3px 7px 19px rgba(218, 163, 127, 0.21);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 16px;
+      height: 80px;
+      border-radius: 16px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    img {
+      margin: 5px;
+    }
+    .dropDown {
+      flex-grow: 2;
+      background-color: #fffcf7;
+      border: 1px solid lightgray;
+    }
+    .dropDown img {
+      width: 40px;
+      height: 40px;
+    }
+    .searchBtn {
+      flex-grow: 1;
+      background-color: #ff944d;
+      color: #fffcf7;
+      border: none;
+    }
+    .searchBtn img {
+      width: 24px;
+      height: 24px;
+    }
+    .dropDown.checkedDirection {
+      border: 1px solid #ff944d;
+    }
+    .dropDown.checkedDate {
+      border: 1px solid #ff944d;
+    }
+  }
+}
