@@ -3,6 +3,8 @@ import MainTemplate from 'components/templates/MainTemplate';
 import LoginPage from 'views/LoginPage';
 import RegisterPage from 'views/RegisterPage';
 import HomePage from './HomePage';
+import ForgotPasswordPage from './ForgotPasswordPage';
+
 
 const App = () => {
   return (
@@ -15,7 +17,7 @@ const App = () => {
           <RegisterPage />
         </Route>
         <Route path="/forgot-password">
-          <p>forgot-password page</p>
+          <ForgotPasswordPage />
         </Route>
         <Route path="/favorites">
           <p>favorites page</p>
