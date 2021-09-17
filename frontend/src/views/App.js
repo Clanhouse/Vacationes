@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import MainTemplate from 'components/templates/MainTemplate';
 import LoginPage from 'views/LoginPage';
 import RegisterPage from 'views/RegisterPage';
+import ForgotPasswordPage from './ForgotPasswordPage';
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
           <RegisterPage />
         </Route>
         <Route path="/forgot-password">
-          <p>forgot-password page</p>
+          <ForgotPasswordPage />
         </Route>
         <Route path="/favorites">
           <p>favorites page</p>
