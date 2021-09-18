@@ -8,27 +8,26 @@ import user from 'assets/images/navbar/user-icon.svg';
 const Navbar = () => {
   return (
     <nav className={styles.wrapper}>
-      <button>
-        <NavLink to="/">
-          <img src={logo} alt="logo" />
-        </NavLink>
-      </button>
+      <NavLink to="/" className={styles.logoLink}>
+        <img src={logo} alt="logo" />
+      </NavLink>
+
       <div className={styles.options}>
-        <button>
-          <NavLink to="/notifications">
+        <NavLink to="/notifications">
+          <button>
             <img src={bell} alt="bell icon" className={styles.bellIcon} />
-          </NavLink>
-        </button>
-        <button className={styles.heartBtn}>
-          <NavLink to="/favorites">
+          </button>
+        </NavLink>
+        <NavLink to="/favorites">
+          <button className={styles.heartBtn}>
             <img src={heart} alt="heart icon" />
-          </NavLink>
-        </button>
-        <button className={styles.userBtn}>
-          <NavLink to="/login">
+          </button>
+        </NavLink>
+        <NavLink to="/login">
+          <button className={styles.userBtn}>
             <img src={user} alt="user icon" />
-          </NavLink>
-        </button>
+          </button>
+        </NavLink>
       </div>
     </nav>
   );
