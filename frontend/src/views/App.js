@@ -5,11 +5,10 @@ import RegisterPage from 'views/RegisterPage';
 import HomePage from './HomePage';
 import ForgotPasswordPage from './ForgotPasswordPage';
 
-
 const App = () => {
   return (
-    <MainTemplate>
-      <Router>
+    <Router>
+      <MainTemplate>
         <Route path="/login">
           <LoginPage />
         </Route>
@@ -22,11 +21,14 @@ const App = () => {
         <Route path="/favorites">
           <p>favorites page</p>
         </Route>
+        <Route path="/notifications">
+          <p>notifications page</p>
+        </Route>
         <Route path="/" exact>
           <HomePage />
         </Route>
-      </Router>
-    </MainTemplate>
+      </MainTemplate>
+    </Router>
   );
 };
 
