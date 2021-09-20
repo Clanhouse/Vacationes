@@ -4,6 +4,7 @@ import LoginPage from 'views/LoginPage';
 import RegisterPage from 'views/RegisterPage';
 import HomePage from './HomePage';
 import ForgotPasswordPage from './ForgotPasswordPage';
+import FavoritesPage from './FavoritesPage';
 
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
           <ForgotPasswordPage />
         </Route>
         <Route path="/favorites">
-          <p>favorites page</p>
+          <FavoritesPage />
         </Route>
         <Route path="/" exact>
           <HomePage />
