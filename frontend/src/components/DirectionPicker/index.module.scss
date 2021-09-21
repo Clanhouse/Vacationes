@@ -1,0 +1,106 @@
+.wrapper {
+  margin-top: 16px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 328px;
+  width: 422px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-size: 18px;
+  overflow-y: scroll;
+  background: #fffcf7;
+  box-shadow: -1px 2px 5px rgba(227, 174, 138, 0.09),
+    -3px 7px 19px rgba(218, 163, 127, 0.21);
+  padding: 16px 0;
+  div {
+    padding: 16px 24px 12px 32px;
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin-left: 16px;
+      position: relative;
+      input {
+        width: 23px;
+        height: 23px;
+        border: 1px solid #e7e1d6;
+        box-sizing: border-box;
+        border-radius: 4px;
+        margin-right: 16px;
+      }
+      input:checked {
+        visibility: hidden;
+      }
+      input:checked ~ .mark {
+        background-color: #ffab73;
+      }
+      .mark {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        height: 24px;
+        width: 24px;
+        border-radius: 4px;
+      }
+      .mark:after {
+        content: '';
+        position: absolute;
+        display: none;
+      }
+      .mark:after {
+        border-radius: 1px;
+        width: 4px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin-bottom: 2px;
+      }
+      input:checked ~ .mark:after {
+        display: block;
+      }
+    }
+  }
+  .checked {
+    background: rgba(255, 197, 144, 0.1);
+    background-color: black;
+  }
+}
+.wrapper::-webkit-scrollbar {
+  height: 256px;
+  width: 34px;
+}
+.wrapper::-webkit-scrollbar-track {
+  height: 234px;
+  width: 10px;
+  background: #f0eadf;
+  border-radius: 8px;
+  border-right: 14px solid rgba(0, 0, 0, 0);
+  border-left: 14px solid rgba(0, 0, 0, 0);
+  border-top: 34px solid rgba(0, 0, 0, 0);
+  border-bottom: 34px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+}
+.wrapper::-webkit-scrollbar-thumb {
+  height: 96px;
+  width: 8px;
+  background: #e7e1d6;
+  border-radius: 10px;
+  border-right: 13px solid rgba(0, 0, 0, 0);
+  border-left: 13px solid rgba(0, 0, 0, 0);
+  border-top: 34px solid rgba(0, 0, 0, 0);
+  border-bottom: 34px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+}
+input:checked ~ .mark {
+  background: green;
+}
+// poprawic scrollbar

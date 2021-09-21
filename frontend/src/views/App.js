@@ -6,6 +6,7 @@ import HomePage from './HomePage';
 import ForgotPasswordPage from './ForgotPasswordPage';
 import FavoritesPage from './FavoritesPage';
 
+
 const App = () => {
   return (
     <Router>
