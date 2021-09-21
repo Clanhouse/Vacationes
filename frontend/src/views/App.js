@@ -5,7 +5,6 @@ import RegisterPage from 'views/RegisterPage';
 import HomePage from './HomePage';
 import ForgotPasswordPage from './ForgotPasswordPage';
 
-
 const App = () => {
   return (
     <MainTemplate>

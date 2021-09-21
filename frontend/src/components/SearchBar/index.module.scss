@@ -1,7 +1,7 @@
 .wrapper {
   height: 412px;
   width: 1296px auto;
-  background-color: rgba(255, 197, 144, 0.1);
+  background-color: #ffc5901a;
   border-radius: 20px 20px 0 100px;
   .header {
     height: 43px;
@@ -29,7 +29,6 @@
       justify-content: center;
       cursor: pointer;
       div {
-        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -40,9 +39,6 @@
         border-radius: 16px;
         input {
           visibility: hidden;
-        }
-        input:checked + label {
-          background: red;
         }
       }
       .places.checked {
@@ -57,8 +53,8 @@
   }
   .formBar {
     height: 96px;
-    width: 1076px;
     margin-left: 110px;
+    margin-right: 110px;
     background-color: #fffcf7;
     box-shadow: -1px 2px 5px rgba(227, 174, 138, 0.09),
       -3px 7px 19px rgba(218, 163, 127, 0.21);
@@ -66,6 +62,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     button {
       display: flex;
       justify-content: center;
