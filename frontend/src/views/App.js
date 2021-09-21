@@ -4,11 +4,13 @@ import LoginPage from 'views/LoginPage';
 import RegisterPage from 'views/RegisterPage';
 import HomePage from './HomePage';
 import ForgotPasswordPage from './ForgotPasswordPage';
+import FavoritesPage from './FavoritesPage';
+
 
 const App = () => {
   return (
-    <MainTemplate>
-      <Router>
+    <Router>
+      <MainTemplate>
         <Route path="/login">
           <LoginPage />
         </Route>
@@ -19,13 +21,16 @@ const App = () => {
           <ForgotPasswordPage />
         </Route>
         <Route path="/favorites">
-          <p>favorites page</p>
+          <FavoritesPage />
+        </Route>
+        <Route path="/notifications">
+          <p>notifications page</p>
         </Route>
         <Route path="/" exact>
           <HomePage />
         </Route>
-      </Router>
-    </MainTemplate>
+      </MainTemplate>
+    </Router>
   );
 };
 
