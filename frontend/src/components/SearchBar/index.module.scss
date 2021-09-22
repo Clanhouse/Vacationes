@@ -60,9 +60,6 @@
       -3px 7px 19px rgba(218, 163, 127, 0.21);
     border-radius: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     button {
       font-family: Satoshi;
       display: flex;
@@ -77,21 +74,36 @@
     img {
       margin: 5px;
     }
+
+    div {
+      position: relative;
+      padding: 8px;
+      .dropDown {
+        width: 414px;
+        background-color: #fffcf7;
+        border: 1px solid lightgray;
+      }
+      .dropDown img {
+        width: 40px;
+        height: 40px;
+      }
+      
     .dropDown {
       flex-grow: 2;
       background-color: #fffcf7;
       border: 1px solid #F0EADF;
       font-weight: 700;
+
     }
-    .dropDown img {
-      width: 40px;
-      height: 40px;
+    .dataWraper {
+      width: 414px;
     }
     .searchBtn {
       flex-grow: 1;
       background-color: #ff944d;
       color: #fffcf7;
       border: none;
+      margin: 8px;
     }
     .searchBtn img {
       width: 24px;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './index.module.scss';
 
-const DirectionPicker = ({ directionPicker }) => {
+const DirectionPicker = ({ directionPicker, isDirectionClicked }) => {
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
 
   const countries = [
@@ -27,12 +27,15 @@ const DirectionPicker = ({ directionPicker }) => {
       setSelectedCheckboxes([...selectedCheckboxes, value]);
     }
   };
-  console.log(directionPicker);
+
   useEffect(() => {
     directionPicker(selectedCheckboxes);
   }, [selectedCheckboxes]);
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      style={{ display: `${isDirectionClicked ? '' : 'none'} ` }}
+    >
       {countries.map((country, index) => (
         <div
           key={index}
@@ -62,5 +65,3 @@ const DirectionPicker = ({ directionPicker }) => {
 };
 
 export default DirectionPicker;
-
-// dokonczyc style

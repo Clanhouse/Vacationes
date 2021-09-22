@@ -5,6 +5,7 @@ import umbrela from '../../assets/images/searchBar/umbrela.svg';
 import plus from '../../assets/images/searchBar/plus.svg';
 import search from '../../assets/images/searchBar/search.svg';
 import DirectionPicker from 'components/DirectionPicker';
+import DatePicker from 'components/DatePicker';
 
 const SearchBar = () => {
   const [filterData, setFilterData] = useState({
@@ -12,6 +13,10 @@ const SearchBar = () => {
       value: 'places',
     },
     directionPicker: [],
+    datePicker: {
+      year: [],
+      month: [],
+    },
   });
   const [checkedIcon, setChecked] = useState(true);
   const [isDirectionClicked, setIsDirectionClicked] = useState(false);
@@ -33,6 +38,21 @@ const SearchBar = () => {
       directionPicker: [data],
     });
   };
+
+  const datePickerYear = (yearData) => {
+    setFilterData({
+      ...filterData,
+      datePicker: { ...filterData.datePicker, year: [yearData] },
+    });
+  };
+
+  const datePickerMonth = (monthData) => {
+    setFilterData({
+      ...filterData,
+      datePicker: { ...filterData.datePicker, month: [monthData] },
+    });
+  };
+
   const directionBtn = (e) => {
     e.preventDefault();
     setIsDirectionClicked(!isDirectionClicked);
@@ -73,29 +93,40 @@ const SearchBar = () => {
           </li>
         </ul>
         <div className={styles.formBar}>
-          <button
-            className={`${styles.dropDown} ${
-              isDirectionClicked ? styles.checkedDirection : ''
-            }`}
-            onClick={(e) => directionBtn(e)}
-          >
-            Kierunek <img src={plus} alt="plus icon" />
-          </button>
-          <button
-            className={`${styles.dropDown} ${
-              isDateClicked ? styles.checkedDate : ''
-            }`}
-            onClick={(e) => dataBtn(e)}
-          >
-            Data <img src={plus} alt="plus icon" />
-          </button>
+          <div>
+            <button
+              className={`${styles.dropDown} ${
+                isDirectionClicked ? styles.checkedDirection : ''
+              }`}
+              onClick={(e) => directionBtn(e)}
+            >
+              Kierunek <img src={plus} alt="plus icon" />
+            </button>{' '}
+            <DirectionPicker
+              directionPicker={directionPicker}
+              isDirectionClicked={isDirectionClicked}
+            />
+          </div>
+          <div className={styles.dataWraper}>
+            <button
+              className={`${styles.dropDown} ${
+                isDateClicked ? styles.checkedDate : ''
+              }`}
+              onClick={(e) => dataBtn(e)}
+            >
+              Data <img src={plus} alt="plus icon" />
+            </button>
+            <DatePicker
+              datePickerYear={datePickerYear}
+              datePickerMonth={datePickerMonth}
+              isDateClicked={isDateClicked}
+            />
+          </div>
+
           <button className={styles.searchBtn}>
             <img src={search} alt="search icon" />
             Szukaj
           </button>
-          {isDirectionClicked && (
-            <DirectionPicker directionPicker={directionPicker} />
-          )}
         </div>
       </form>
       <div className={styles.searchForm}></div>
