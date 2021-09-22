@@ -61,9 +61,11 @@
     border-radius: 20px;
     display: flex;
     button {
+      font-family: Satoshi;
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 8px;
       height: 80px;
       border-radius: 16px;
       font-size: 18px;
@@ -72,6 +74,7 @@
     img {
       margin: 5px;
     }
+
     div {
       position: relative;
       padding: 8px;
@@ -84,6 +87,13 @@
         width: 40px;
         height: 40px;
       }
+      
+    .dropDown {
+      flex-grow: 2;
+      background-color: #fffcf7;
+      border: 1px solid #F0EADF;
+      font-weight: 700;
+
     }
     .dataWraper {
       width: 414px;

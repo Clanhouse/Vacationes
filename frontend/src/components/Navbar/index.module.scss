@@ -23,6 +23,16 @@
     justify-content: center;
     align-items: center;
   }
+
+  .logoIcon {
+    width: 160px;
+  }
+
+  .navBtnLink {
+    display: flex;
+    align-items: center;
+  }
+
   .heartBtn {
     margin: 0 32px;
   }
@@ -32,5 +42,9 @@
   }
   .logoLink {
     padding: 5px 5px 5px 0;
+  }
+
+  .bellIcon, .heartIcon {
+    height: 24px;
   }
 }
