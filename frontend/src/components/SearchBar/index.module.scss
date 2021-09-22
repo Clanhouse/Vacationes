@@ -64,10 +64,11 @@
     align-items: center;
     position: relative;
     button {
+      font-family: Satoshi;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 16px;
+      margin: 8px;
       height: 80px;
       border-radius: 16px;
       font-size: 18px;
@@ -79,7 +80,8 @@
     .dropDown {
       flex-grow: 2;
       background-color: #fffcf7;
-      border: 1px solid lightgray;
+      border: 1px solid #F0EADF;
+      font-weight: 700;
     }
     .dropDown img {
       width: 40px;
