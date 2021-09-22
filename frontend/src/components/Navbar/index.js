@@ -9,16 +9,16 @@ const Navbar = () => {
   return (
     <nav className={styles.wrapper}>
       <NavLink to="/" className={styles.logoLink}>
-        <img src={logo} alt="logo" />
+        <img src={logo} className={styles.logoIcon} alt="logo" />
       </NavLink>
 
       <div className={styles.options}>
-        <NavLink to="/notifications">
-          <button>
-            <img src={bell} alt="bell icon" className={styles.bellIcon} />
+        <NavLink to="/notifications" className={styles.navBtnLink}>
+          <button className={styles.bellBtn}>
+            <img src={bell} alt="bell icon" />
           </button>
         </NavLink>
-        <NavLink to="/favorites">
+        <NavLink to="/favorites" className={styles.navBtnLink}>
           <button className={styles.heartBtn}>
             <img src={heart} alt="heart icon" />
           </button>

@@ -23,8 +23,23 @@
     justify-content: center;
     align-items: center;
   }
+
+  .logoIcon {
+    width: 160px;
+  }
+
+  .navBtnLink {
+    display: flex;
+    align-items: center;
+  }
+
+  .bellBtn {
+    height: 32px;
+  }
+
   .heartBtn {
     margin: 0 32px;
+    height: 32px;
   }
   .userBtn {
     background-color: #ff944d;
