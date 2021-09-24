@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './VacationOfferBox.module.scss';
 import Text from 'components/Text';
-import offerImage from 'assets/images/offer-image.svg';
+import offerImage from 'assets/images/offer-image.webp';
 
 function VacationOfferBox(props) {
   return (
