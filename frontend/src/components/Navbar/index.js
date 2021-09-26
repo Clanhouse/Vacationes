@@ -13,19 +13,19 @@ const Navbar = () => {
       </NavLink>
 
       <div className={styles.options}>
-        <NavLink to="/notifications" className={styles.navBtnLink}>
+        <NavLink to="/notifications">
           <button className={styles.bellBtn}>
             <img src={bell} alt="bell icon" className={styles.bellIcon} />
           </button>
         </NavLink>
-        <NavLink to="/favorites" className={styles.navBtnLink}>
+        <NavLink to="/favorites">
           <button className={styles.heartBtn}>
             <img src={heart} alt="heart icon" className={styles.heartIcon} />
           </button>
         </NavLink>
         <NavLink to="/login">
           <button className={styles.userBtn}>
-            <img src={user} alt="user icon" />
+            <img src={user} alt="user icon" className={styles.userIcon} />
           </button>
         </NavLink>
       </div>
