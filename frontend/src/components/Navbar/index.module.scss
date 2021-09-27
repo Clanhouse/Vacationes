@@ -9,11 +9,15 @@
   left: 0;
   right: 0;
   margin: 32px 50px;
+
   .options {
     display: flex;
+    gap: 32px;
   }
+
   button { 
-    border: none;
+    border: 1px solid #F0EADF;
+    border-radius: 50%;
     outline: none;
     background-color: transparent;
     cursor: pointer;
@@ -28,23 +32,11 @@
     width: 160px;
   }
 
-  .navBtnLink {
-    display: flex;
-    align-items: center;
-  }
-
-  .heartBtn {
-    margin: 0 32px;
-  }
-  .userBtn {
-    background-color: #ff944d;
-    border-radius: 50%;
-  }
   .logoLink {
     padding: 5px 5px 5px 0;
   }
 
-  .bellIcon, .heartIcon {
+  .bellIcon, .heartIcon, .userIcon {
     height: 24px;
   }
 }
