@@ -4,6 +4,12 @@ import styles from './index.module.scss';
 const DirectionPicker = ({ directionPicker, isDirectionClicked }) => {
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
 
+  fetch(
+    'https://shrouded-sierra-07729.herokuapp.com/https://vacationes.herokuapp.com/api/locations'
+  )
+    .then((res) => res.json())
+    .then((res) => console.log(res));
+
   const countries = [
     'Wszystko',
     'Polska',
