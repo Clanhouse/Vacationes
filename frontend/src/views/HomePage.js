@@ -3,11 +3,14 @@ import SearchBar from 'components/SearchBar';
 import Text from 'components/Text';
 import VacationOffersList from 'components/VacationOffersList/VacationOffersList';
 import styles from 'views/HomePage.module.scss';
+import { useDispatch } from 'react-redux';
+import { addData } from '../Redux/slices/datafetchSlice';
 
 const HomePage = () => {
   const [holidayOffers, setHolidayOffers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [loadingTakesLong, setLoadingTakesLong] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getHolidayOffers = async () => {
@@ -31,8 +34,19 @@ const HomePage = () => {
       setHolidayOffers(data);
       setIsLoading(false);
     };
+
     getHolidayOffers();
   }, []);
+
+  useEffect(() => {
+    fetch(
+      'https://shrouded-sierra-07729.herokuapp.com/https://vacationes.herokuapp.com/api/holidays'
+    )
+      .then((res) => res.json())
+      .then((res) => dispatch(addData(res)))
+      .catch((e) => console.log(e));
+  }, []);
+
   return (
     <div>
       <SearchBar></SearchBar>

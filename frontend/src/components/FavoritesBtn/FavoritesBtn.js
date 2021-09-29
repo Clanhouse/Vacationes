@@ -1,11 +1,34 @@
+import { useState } from 'react';
 import styles from './FavoritesBtn.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, removeItem } from 'Redux/slices/favouriteSlice';
 
-const FavoritesBtn = ({ isFavorite = false }) => {
+const FavoritesBtn = ({ id, item }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const dispatch = useDispatch();
+
+  const onClickCurrentCard = (id) => {
+    if (id === item.id) {
+      let existingItems = JSON.parse(localStorage.getItem('allItems'));
+      if (existingItems === null) {
+        existingItems = [];
+      }
+      if (existingItems.includes(item)) {
+        return;
+      } else {
+        existingItems.push(item);
+      }
+      console.log(item);
+      localStorage.setItem('allItems', JSON.stringify(existingItems));
+    }
+  };
+  // dispatch(addItem(JSON.parse(localStorage.getItem('allItems'))));
   return (
     <button
       className={`${styles.addToFavoritesBtn} ${
         isFavorite ? styles.active : ''
       }`}
+      onClick={() => onClickCurrentCard(id)}
     >
       <svg viewBox="0 0 25.5 23" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
