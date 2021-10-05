@@ -5,29 +5,19 @@ const VacationOffersList = ({ list }) => {
   return (
     <div className={styles.wrapper}>
       <>
-        {list.map(
-          ({
-            destination: { country },
-            flight: {
-              destination: { city },
-              price,
-            },
-            startDate,
-            endDate,
-            hotel: { name },
-            id,
-          }) => (
-            <VacationOfferBox
-              country={country}
-              city={city}
-              price={price}
-              startDate={startDate}
-              endDate={endDate}
-              hotelName={name}
-              key={id}
-            />
-          )
-        )}
+        {list.map((item) => (
+          <VacationOfferBox
+            country={item.country}
+            city={item.city}
+            price={item.price}
+            startDate={item.startDate}
+            endDate={item.endDate}
+            hotelName={item.name}
+            key={item.id}
+            id={item.id}
+            item={item}
+          />
+        ))}
       </>
     </div>
   );

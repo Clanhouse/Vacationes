@@ -7,7 +7,7 @@ import FavoritesBtn from 'components/FavoritesBtn/FavoritesBtn';
 function VacationOfferBox(props) {
   return (
     <div className={styles.wrapper}>
-      <FavoritesBtn />
+      <FavoritesBtn id={props.id} item={props.item} />
       <div className={styles.imageWrapper}>
         <img className={styles.offerImage} src={offerImage} alt="" />
       </div>
