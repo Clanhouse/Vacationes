@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from './FavoritesBtn.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, removeItem } from 'Redux/slices/favouriteSlice';
@@ -13,7 +12,7 @@ const FavoritesBtn = ({ id, item }) => {
     if (!idOfExistingItem.includes(id)) {
       dispatch(addItem(item));
     } else {
-      dispatch(removeItem(item));
+      dispatch(removeItem(id));
     }
   };
 
