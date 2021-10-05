@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import VacationOffersList from 'components/VacationOffersList/VacationOffersList';
-import Text from 'components/Text';
 import { useSelector } from 'react-redux';
 
 const FavoritesPage = () => {
