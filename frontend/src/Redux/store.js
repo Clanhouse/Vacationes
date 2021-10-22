@@ -1,13 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-<<<<<<< HEAD
-import favouriteReducer from './slices/favouriteSlice';
-
-export const store = configureStore({
-  reducer: {
-    favouriteReducer,
-  },
-});
-=======
 import favoriteReducer from './slices/favouriteSlice';
 import dataFetchReducer from './slices/datafetchSlice';
 import { persistStore, persistReducer } from 'redux-persist';
@@ -28,4 +19,3 @@ export const store = configureStore({
   },
 });
 export const persistor = persistStore(store);
->>>>>>> changedFavouriteList

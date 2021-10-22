@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './index.module.scss';
+import styles from './DatePicker.module.scss';
 const DatePicker = ({ datePickerYear, datePickerMonth, isDateClicked }) => {
   const [selectedYear, setSelectedYear] = useState([]);
   const [selectedMonths, setSelectedMonths] = useState([]);

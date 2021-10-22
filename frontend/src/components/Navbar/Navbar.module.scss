@@ -15,8 +15,8 @@
     gap: 32px;
   }
 
-  button { 
-    border: 1px solid #F0EADF;
+  button {
+    border: 1px solid #f0eadf;
     border-radius: 50%;
     outline: none;
     background-color: transparent;
@@ -36,7 +36,9 @@
     padding: 5px 5px 5px 0;
   }
 
-  .bellIcon, .heartIcon, .userIcon {
+  .bellIcon,
+  .heartIcon,
+  .userIcon {
     height: 24px;
   }
 }

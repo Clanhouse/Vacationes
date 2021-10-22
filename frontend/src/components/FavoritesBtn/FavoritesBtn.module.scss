@@ -18,12 +18,15 @@
     transform: translateY(1px);
   }
 
+  &:hover svg {
+    & path {
+      stroke: #ff944d;
+      transition: 0.2s;
+    }
+  }
+
   &.active svg {
-<<<<<<< HEAD
     fill: #ff944d;
-=======
-    fill: #fcf4ef;
->>>>>>> changedFavouriteList
     & path {
       stroke: #ff944d;
     }

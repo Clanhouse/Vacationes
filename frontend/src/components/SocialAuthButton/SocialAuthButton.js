@@ -1,4 +1,4 @@
-import styles from './index.module.scss';
+import styles from './SocialAuthButton.module.scss';
 
 const SocialAuthButton = ({ socialIcon, socialName, children }) => {
   return (

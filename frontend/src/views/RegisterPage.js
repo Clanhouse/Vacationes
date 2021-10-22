@@ -1,12 +1,12 @@
 import AuthTemplate from 'components/templates/AuthTemplate';
-import Input from 'components/Input';
-import Heading from 'components/Heading';
-import Text from 'components/Text';
-import StyledLink from 'components/StyledLink';
-import SocialAuthButton from 'components/SocialAuthButton';
+import Input from 'components/Input/Input';
+import Heading from 'components/Heading/Heading';
+import Text from 'components/Text/Text';
+import StyledLink from 'components/StyledLink/StyledLink';
+import SocialAuthButton from 'components/SocialAuthButton/SocialAuthButton';
 import googleIcon from 'assets/images/social/google-icon.svg';
 import facebookIcon from 'assets/images/social/facebook-icon.svg';
-import Button from 'components/Button';
+import Button from 'components/Button/Button';
 
 const RegisterPage = () => {
   return (

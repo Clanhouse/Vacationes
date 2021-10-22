@@ -1,8 +1,8 @@
 import styles from './PageNotFound.module.scss';
 import notFoundImage from 'assets/images/404.svg';
-import Heading from 'components/Heading';
-import Text from 'components/Text';
-import Button from 'components/Button';
+import Heading from 'components/Heading/Heading';
+import Text from 'components/Text/Text';
+import Button from 'components/Button/Button';
 import { Link } from 'react-router-dom';
 
 const PageNotFound = () => {

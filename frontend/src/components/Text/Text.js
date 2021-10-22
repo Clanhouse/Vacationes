@@ -1,4 +1,4 @@
-import styles from './index.module.scss';
+import styles from './Text.module.scss';
 
 const Text = ({ big, bold, children }) => {
   return (
