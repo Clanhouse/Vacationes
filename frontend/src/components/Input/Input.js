@@ -1,4 +1,4 @@
-import styles from './index.module.scss';
+import styles from './Input.module.scss';
 
 const Input = ({
   name = 'Email',

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './VacationOfferBox.module.scss';
-import Text from 'components/Text';
+import Text from 'components/Text/Text';
 import offerImage from 'assets/images/offer-image.webp';
 import FavoritesBtn from 'components/FavoritesBtn/FavoritesBtn';
 

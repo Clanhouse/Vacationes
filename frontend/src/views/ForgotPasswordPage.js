@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import AuthTemplate from 'components/templates/AuthTemplate';
-import Input from 'components/Input';
-import Heading from 'components/Heading';
-import Text from 'components/Text';
-import Button from 'components/Button';
-import StyledLink from 'components/StyledLink';
+import Input from 'components/Input/Input';
+import Heading from 'components/Heading/Heading';
+import Text from 'components/Text/Text';
+import Button from 'components/Button/Button';
+import StyledLink from 'components/StyledLink/StyledLink';
 
 const ForgotPasswordPage = () => {
   const [newPasswordSent, setNewPasswordSent] = useState(false);

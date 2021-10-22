@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import SearchBar from 'components/SearchBar';
-import Text from 'components/Text';
+import SearchBar from 'components/SearchBar/SearchBar';
+import Text from 'components/Text/Text';
 import VacationOffersList from 'components/VacationOffersList/VacationOffersList';
 import styles from 'views/HomePage.module.scss';
 import { useDispatch } from 'react-redux';

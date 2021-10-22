@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './index.module.scss';
+import styles from './DirectionPicker.module.scss';
 
 const DirectionPicker = ({ directionPicker, isDirectionClicked }) => {
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);

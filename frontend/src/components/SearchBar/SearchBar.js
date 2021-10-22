@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styles from './index.module.scss';
-import airplane from '../../assets/images/searchBar/airplane.svg';
-import umbrela from '../../assets/images/searchBar/umbrela.svg';
-import plus from '../../assets/images/searchBar/plus.svg';
-import search from '../../assets/images/searchBar/search.svg';
-import DirectionPicker from 'components/DirectionPicker';
-import DatePicker from 'components/DatePicker';
+import styles from './SearchBar.module.scss';
+import airplane from '../../assets/images/searchbar/airplane.svg';
+import umbrela from '../../assets/images/searchbar/umbrella.svg';
+import plus from '../../assets/images/searchbar/plus.svg';
+import search from '../../assets/images/searchbar/search.svg';
+import DirectionPicker from 'components/DirectionPicker/DirectionPicker';
+import DatePicker from 'components/DatePicker/DatePicker';
 
 const SearchBar = () => {
   const [filterData, setFilterData] = useState({
