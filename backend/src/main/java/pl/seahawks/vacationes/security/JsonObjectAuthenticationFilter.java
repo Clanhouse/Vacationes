@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import pl.seahawks.vacationes.user.model.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +18,8 @@ public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticati
     private final ObjectMapper objectMapper;
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) {
+    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+            throws AuthenticationException {
         try {
             BufferedReader reader = request.getReader();
             StringBuilder sb = new StringBuilder();
@@ -26,9 +27,9 @@ public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticati
             while ((line = reader.readLine()) != null) {
                 sb.append(line);
             }
-            User authRequest = objectMapper.readValue(sb.toString(), User.class);
+            LoginCredentials authRequest = objectMapper.readValue(sb.toString(), LoginCredentials.class);
             UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
-                    authRequest.getEmail(), authRequest.getPassword()
+                    authRequest.getUsername(), authRequest.getPassword()
             );
             setDetails(request, token);
             return this.getAuthenticationManager().authenticate(token);

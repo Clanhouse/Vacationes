@@ -12,38 +12,37 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import pl.seahawks.vacationes.repository.UserRepository;
 
-import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final DataSource dataSource;
     private final ObjectMapper objectMapper;
     private final RestAuthenticationSuccessHandler authenticationSuccessHandler;
     private final RestAuthenticationFailureHandler authenticationFailureHandler;
     private final String secret;
     private final UserRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
 
-    public SecurityConfig(DataSource dataSource,
-                          ObjectMapper objectMapper,
-                          RestAuthenticationSuccessHandler authenticationSuccessHandler,
-                          RestAuthenticationFailureHandler authenticationFailureHandler,
-                          @Value("${jwt.secret}") String secret,
-                          UserRepository repository) {
+    public SecurityConfig(
+            ObjectMapper objectMapper,
+            RestAuthenticationSuccessHandler authenticationSuccessHandler,
+            RestAuthenticationFailureHandler authenticationFailureHandler,
+            @Value("${jwt.secret}") String secret,
+            UserRepository repository, PasswordEncoder passwordEncoder) {
 
-        this.dataSource = dataSource;
+
         this.objectMapper = objectMapper;
         this.authenticationSuccessHandler = authenticationSuccessHandler;
         this.authenticationFailureHandler = authenticationFailureHandler;
         this.secret = secret;
         this.repository = repository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -53,15 +52,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().disable();
 
         http.authorizeRequests()
-                .antMatchers("/swagger-ui.html").permitAll()
-                .antMatchers("/v2/api-docs").permitAll()
-                .antMatchers("/swagger-resources/**").permitAll()
-                .antMatchers("/h2-console/**").permitAll()
-                .antMatchers("/api/flights").permitAll()
-                .antMatchers("/api/holidays").permitAll()
-                .antMatchers("/api/hotels").permitAll()
-                .antMatchers("/api/locations").permitAll()
-                .antMatchers("/api/register/**").permitAll()
+                .antMatchers("/swagger-ui.html",
+                        "/v2/api-docs",
+                        "/swagger-resources/**",
+                        "/h2-console/**",
+                        "/webjars/**",
+                        "/api/holidays",
+                        "/api/hotels",
+                        "/api/locations",
+                        "/api/register/**",
+                        "/login")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -87,6 +88,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         SeahawksUserDetailsService detailsService = new SeahawksUserDetailsService(repository);
         provider.setUserDetailsService(detailsService);
+        provider.setPasswordEncoder(passwordEncoder.bCryptPasswordEncoder());
         return provider;
     }
 
@@ -100,8 +102,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return filter;
     }
 
+
     @Bean
     public UserDetailsManager userDetailsManager() {
-        return new JdbcUserDetailsManager(dataSource);
+        return new SeahawksUserDetailsService(repository);
     }
 }
